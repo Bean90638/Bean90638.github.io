@@ -1,0 +1,621 @@
+baseURL = "http://example.org/"
+
+# 更改使用 Hugo 構建網站時使用的預設主題
+theme = "LoveIt"
+
+# 網站標題
+title = "我的全新 Hugo 網站"
+
+# 網站語言, 僅在這裡 CN 大寫 ["en", "zh-CN", "fr", "pl", ...]
+languageCode = "zh-TW"
+# 語言名稱 ["English", "簡體中文", "Français", "Polski", ...]
+languageName = "繁體中文"
+# 是否包括中日韓文字
+hasCJKLanguage = true
+
+# 預設每頁清單顯示的文章數目
+paginate = 12
+# 穀歌分析代號 [UA-XXXXXXXX-X]
+googleAnalytics = ""
+# 版權描述，僅僅用於 SEO
+copyright = ""
+
+# 是否使用 robots.txt
+enableRobotsTXT = true
+# 是否使用 git 資訊
+enableGitInfo = true
+# 是否使用 emoji 代碼
+enableEmoji = true
+
+# 忽略一些構建錯誤
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
+# 作者配置
+[author]
+  name = "xxxx"
+  email = ""
+  link = ""
+
+# 功能表配置
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    # 你可以在名稱 (允許 HTML 格式) 之前添加其他資訊, 例如圖示
+    pre = ""
+    # 你可以在名稱 (允許 HTML 格式) 之後添加其他資訊, 例如圖示
+    post = ""
+    name = "文章"
+    url = "/posts/"
+    # 當你將滑鼠懸停在此功能表連結上時, 將顯示的標題
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "標籤"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "分類"
+    url = "/categories/"
+    title = ""
+
+[params]
+  # 網站預設主題樣式 ["auto", "light", "dark"]
+  defaultTheme = "auto"
+  # 公共 git 倉庫路徑，僅在 enableGitInfo 設為 true 時有效
+  gitRepo = ""
+  #  哪種雜湊函數用來 SRI, 為空時表示不使用 SRI
+  # ["sha256", "sha384", "sha512", "md5"]
+  fingerprint = ""
+  #  日期格式
+  dateFormat = "2006-01-02"
+  # 網站標題, 用於 Open Graph 和 Twitter Cards
+  title = "我的網站"
+  # 網站描述, 用於 RSS, SEO, Open Graph 和 Twitter Cards
+  description = "這是我的全新 Hugo 網站"
+  # 網站圖片, 用於 Open Graph 和 Twitter Cards
+  images = ["/logo.png"]
+
+  # 頁面頭部巡覽列配置
+  [params.header]
+    # 桌面端巡覽列模式 ["fixed", "normal", "auto"]
+    desktopMode = "fixed"
+    # 移動端巡覽列模式 ["fixed", "normal", "auto"]
+    mobileMode = "auto"
+    #  頁面頭部巡覽列標題配置
+    [params.header.title]
+      # LOGO 的 URL
+      logo = ""
+      # 標題名稱
+      name = ""
+      # 你可以在名稱 (允許 HTML 格式) 之前添加其他資訊, 例如圖示
+      pre = ""
+      # 你可以在名稱 (允許 HTML 格式) 之後添加其他資訊, 例如圖示
+      post = ""
+      #  是否為標題顯示打字機動畫
+      typeit = false
+
+  # 頁面底部資訊配置
+  [params.footer]
+    enable = true
+    #  自訂內容 (支援 HTML 格式)
+    custom = ''
+    #  是否顯示 Hugo 和主題資訊
+    hugo = true
+    #  是否顯示版權資訊
+    copyright = true
+    #  是否顯示作者
+    author = true
+    # 網站創立年份
+    since = 2019
+    # ICP 備案資訊，僅在中國使用 (支援 HTML 格式)
+    icp = ""
+    # 授權合約資訊 (支援 HTML 格式)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  #  Section (所有文章) 頁面配置
+  [params.section]
+    # section 頁面每頁顯示文章數量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = "01-02"
+    # RSS 文章數目
+    rss = 10
+
+  #  List (目錄或標籤) 頁面配置
+  [params.list]
+    # list 頁面每頁顯示文章數量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = "01-02"
+    # RSS 文章數目
+    rss = 10
+
+  #  應用圖示配置
+  [params.app]
+    # 當添加到 iOS 主螢幕或者 Android 啟動器時的標題, 覆蓋默認標題
+    title = "我的網站"
+    # 是否隱藏網站圖示資源連結
+    noFavicon = false
+    # 更現代的 SVG 網站圖示, 可替代舊的 .png 和 .ico 文件
+    svgFavicon = ""
+    # Android 流覽器主題色
+    themeColor = "#ffffff"
+    # Safari 圖示顏色
+    iconColor = "#5bbad5"
+    # Windows v8-10磁貼顏色
+    tileColor = "#da532c"
+
+  #  搜索配置
+  [params.search]
+    enable = true
+    # 搜尋引擎的類型 ["lunr", "algolia"]
+    type = "lunr"
+    # 文章內容最長索引長度
+    contentLength = 4000
+    # 搜索框的占位提示語
+    placeholder = ""
+    #  最大結果數目
+    maxResultLength = 10
+    #  結果內容片段長度
+    snippetLength = 50
+    #  搜索結果中高亮部分的 HTML 標籤
+    highlightTag = "em"
+    #  是否在搜索索引中使用基於 baseURL 的絕對路徑
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+
+  # 主頁配置
+  [params.home]
+    #  RSS 文章數目
+    rss = 10
+    # 主頁個人資訊
+    [params.home.profile]
+      enable = true
+      # Gravatar 郵箱，用於優先在主頁顯示的頭像
+      gravatarEmail = ""
+      # 主頁顯示頭像的 URL
+      avatarURL = "/images/avatar.png"
+      #  主頁顯示的網站標題 (支援 HTML 格式)
+      title = ""
+      # 主頁顯示的網站副標題 (允許 HTML 格式)
+      subtitle = "這是我的全新 Hugo 網站"
+      # 是否為副標題顯示打字機動畫
+      typeit = true
+      # 是否顯示社交帳號
+      social = true
+      #  免責聲明 (支持 HTML 格式)
+      disclaimer = ""
+    # 主頁文章列表
+    [params.home.posts]
+      enable = true
+      # 主頁每頁顯示文章數量
+      paginate = 6
+      #  被 params.page 中的 hiddenFromHomePage 替代
+      # 當你沒有在文章前置參數中設置 "hiddenFromHomePage" 時的默認行為
+      defaultHiddenFromHomePage = false
+
+  # 作者的社交資訊設置
+  [params.social]
+    GitHub = "xxxx"
+    Linkedin = ""
+    Twitter = "xxxx"
+    Instagram = "xxxx"
+    Facebook = "xxxx"
+    Telegram = "xxxx"
+    Medium = ""
+    Gitlab = ""
+    Youtubelegacy = ""
+    Youtubecustom = ""
+    Youtubechannel = ""
+    Tumblr = ""
+    Quora = ""
+    Keybase = ""
+    Pinterest = ""
+    Reddit = ""
+    Codepen = ""
+    FreeCodeCamp = ""
+    Bitbucket = ""
+    Stackoverflow = ""
+    Weibo = ""
+    Odnoklassniki = ""
+    VK = ""
+    Flickr = ""
+    Xing = ""
+    Snapchat = ""
+    Soundcloud = ""
+    Spotify = ""
+    Bandcamp = ""
+    Paypal = ""
+    Fivehundredpx = ""
+    Mix = ""
+    Goodreads = ""
+    Lastfm = ""
+    Foursquare = ""
+    Hackernews = ""
+    Kickstarter = ""
+    Patreon = ""
+    Steam = ""
+    Twitch = ""
+    Strava = ""
+    Skype = ""
+    Whatsapp = ""
+    Zhihu = ""
+    Douban = ""
+    Angellist = ""
+    Slidershare = ""
+    Jsfiddle = ""
+    Deviantart = ""
+    Behance = ""
+    Dribbble = ""
+    Wordpress = ""
+    Vine = ""
+    Googlescholar = ""
+    Researchgate = ""
+    Mastodon = ""
+    Thingiverse = ""
+    Devto = ""
+    Gitea = ""
+    XMPP = ""
+    Matrix = ""
+    Bilibili = ""
+    Discord = ""
+    DiscordInvite = ""
+    Lichess = ""
+    ORCID = ""
+    Pleroma = ""
+    Kaggle = ""
+    MediaWiki= ""
+    Plume = ""
+    HackTheBox = ""
+    RootMe= ""
+    Phone = ""
+    Email = "xxxx@xxxx.com"
+    RSS = true # 
+
+  #  文章頁面全域配置
+  [params.page]
+    #  是否在主頁隱藏一篇文章
+    hiddenFromHomePage = false
+    #  是否在搜索結果中隱藏一篇文章
+    hiddenFromSearch = false
+    #  是否使用 twemoji
+    twemoji = false
+    # 是否使用 lightgallery
+    lightgallery = false
+    #  是否使用 ruby 擴展語法
+    ruby = true
+    #  是否使用 fraction 擴展語法
+    fraction = true
+    #  是否使用 fontawesome 擴展語法
+    fontawesome = true
+    # 是否在文章頁面顯示原始 Markdown 文檔連結
+    linkToMarkdown = true
+    #  是否在 RSS 中顯示全文內容
+    rssFullText = false
+    #  目錄配置
+    [params.page.toc]
+      # 是否使用目錄
+      enable = true
+      #  是否保持使用文章前面的靜態目錄
+      keepStatic = true
+      # 是否使側邊目錄自動折疊展開
+      auto = true
+    #  代碼配置
+    [params.page.code]
+      # 是否顯示代碼塊的複製按鈕
+      copy = true
+      # 預設展開顯示的代碼行數
+      maxShownLines = 50
+    #  KaTeX 數學公式
+    [params.page.math]
+      enable = true
+      #  默認行內定界符是 $ ... $ 和 \( ... \)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      #  默認塊定界符是 $$ ... $$, \[ ... \],  \begin{equation} ... \end{equation} 和一些其它的函數
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      # KaTeX 外掛程式 copy_tex
+      copyTex = true
+      # KaTeX 外掛程式 mhchem
+      mhchem = true
+    #  Mapbox GL JS 配置
+    [params.page.mapbox]
+      # Mapbox GL JS 的 access token
+      accessToken = ""
+      # 淺色主題的地圖樣式
+      lightStyle = "mapbox://styles/mapbox/light-v10?optimize=true"
+      # 深色主題的地圖樣式
+      darkStyle = "mapbox://styles/mapbox/dark-v10?optimize=true"
+      # 是否添加 NavigationControl
+      navigation = true
+      # 是否添加 GeolocateControl
+      geolocate = true
+      # 是否添加 ScaleControl
+      scale = true
+      # 是否添加 FullscreenControl
+      fullscreen = true
+    #  文章頁面的分享資訊設置
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = false
+      Whatsapp = false
+      Pinterest = false
+      Tumblr = false
+      HackerNews = true
+      Reddit = false
+      VK = false
+      Buffer = false
+      Xing = false
+      Line = true
+      Instapaper = false
+      Pocket = false
+      Flipboard = false
+      Weibo = true
+      Blogger = false
+      Baidu = false
+      Odnoklassniki = false
+      Evernote = false
+      Skype = false
+      Trello = false
+      Mix = false
+    #  評論系統設置
+    [params.page.comment]
+      enable = false
+      # Disqus 評論系統設置
+      [params.page.comment.disqus]
+        # 
+        enable = false
+        # Disqus 的 shortname，用來在文章中啟用 Disqus 評論系統
+        shortname = ""
+      # Gitalk 評論系統設置
+      [params.page.comment.gitalk]
+        # 
+        enable = false
+        owner = ""
+        repo = ""
+        clientId = ""
+        clientSecret = ""
+      # Valine 評論系統設置
+      [params.page.comment.valine]
+        enable = false
+        appId = ""
+        appKey = ""
+        placeholder = ""
+        avatar = "mp"
+        meta= ""
+        pageSize = 10
+        # 為空時自動適配當前主題 i18n 配置
+        lang = ""
+        visitor = true
+        recordIP = true
+        highlight = true
+        enableQQ = false
+        serverURLs = ""
+        #  emoji 資料檔案名稱, 默認是 "google.yml"
+        # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
+        # 位於 "themes/LoveIt/assets/lib/valine/emoji/" 目錄
+        # 可以在你的專案下相同路徑存放你自己的資料檔案:
+        # "assets/lib/valine/emoji/"
+        emoji = ""
+      # Facebook 評論系統設置
+      [params.page.comment.facebook]
+        enable = false
+        width = "100%"
+        numPosts = 10
+        appId = ""
+        # 為空時自動適配當前主題 i18n 配置
+        languageCode = "zh_CN"
+      #  Telegram Comments 評論系統設置
+      [params.page.comment.telegram]
+        enable = false
+        siteID = ""
+        limit = 5
+        height = ""
+        color = ""
+        colorful = true
+        dislikes = false
+        outlined = false
+      #  Commento 評論系統設置
+      [params.page.comment.commento]
+        enable = false
+      #  utterances 評論系統設置
+      [params.page.comment.utterances]
+        enable = false
+        # owner/repo
+        repo = ""
+        issueTerm = "pathname"
+        label = ""
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
+      # giscus comment 評論系統設置 (https://giscus.app/zh-CN)
+      [params.page.comment.giscus]
+        # 你可以參考官方文檔來使用下列配置
+        enable = false
+        repo = ""
+        repoId = ""
+        category = "Announcements"
+        categoryId = ""
+        # 為空時自動適配當前主題 i18n 配置
+        lang = ""
+        mapping = "pathname"
+        reactionsEnabled = "1"
+        emitMetadata = "0"
+        inputPosition = "bottom"
+        lazyLoading = false
+        lightTheme = "light"
+        darkTheme = "dark"
+    #  協力廠商庫配置
+    [params.page.library]
+      [params.page.library.css]
+        # someCSS = "some.css"
+        # 位於 "assets/"
+        # 或者
+        # someCSS = "https://cdn.example.com/some.css"
+      [params.page.library.js]
+        # someJavascript = "some.js"
+        # 位於 "assets/"
+        # 或者
+        # someJavascript = "https://cdn.example.com/some.js"
+    #  頁面 SEO 配置
+    [params.page.seo]
+      # 圖片 URL
+      images = []
+      # 出版者資訊
+      [params.page.seo.publisher]
+        name = ""
+        logoUrl = ""
+
+  #  TypeIt 配置
+  [params.typeit]
+    # 每一步的打字速度 (單位是毫秒)
+    speed = 100
+    # 游標的閃爍速度 (單位是毫秒)
+    cursorSpeed = 1000
+    # 游標的字元 (支援 HTML 格式)
+    cursorChar = "|"
+    # 打字結束之後游標的持續時間 (單位是毫秒, "-1" 代表無限大)
+    duration = -1
+
+  # 網站驗證代碼，用於 Google/Bing/Yandex/Pinterest/Baidu
+  [params.verification]
+    google = ""
+    bing = ""
+    yandex = ""
+    pinterest = ""
+    baidu = ""
+
+  #  網站 SEO 配置
+  [params.seo]
+    # 圖片 URL
+    image = ""
+    # 縮略圖 URL
+    thumbnailUrl = ""
+
+  #  網站分析配置
+  [params.analytics]
+    enable = false
+    # Google Analytics
+    [params.analytics.google]
+      id = ""
+      # 是否匿名化用戶 IP
+      anonymizeIP = true
+    # Fathom Analytics
+    [params.analytics.fathom]
+      id = ""
+      # 自行託管追蹤器時的主機路徑
+      server = ""
+    # Plausible Analytics
+    [params.analytics.plausible]
+      dataDomain = ""
+    # Yandex Metrica
+    [params.analytics.yandexMetrica]
+      id = ""
+
+  #  Cookie 許可配置
+  [params.cookieconsent]
+    enable = true
+    # 用於 Cookie 許可橫幅的文本字串
+    [params.cookieconsent.content]
+      message = ""
+      dismiss = ""
+      link = ""
+
+  #  協力廠商庫檔的 CDN 設置
+  [params.cdn]
+    # CDN 資料檔案名稱, 默認不啟用
+    # ["jsdelivr.yml"]
+    # 位於 "themes/LoveIt/assets/data/cdn/" 目錄
+    # 可以在你的專案下相同路徑存放你自己的資料檔案:
+    # "assets/data/cdn/"
+    data = ""
+
+  #  相容性設置
+  [params.compatibility]
+    # 是否使用 Polyfill.io 來相容舊式流覽器
+    polyfill = false
+    # 是否使用 object-fit-images 來相容舊式流覽器
+    objectFit = false
+
+# Hugo 解析文檔的配置
+[markup]
+  # 語法高亮設置
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false 是必要的設置
+    # (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+  # Goldmark 是 Hugo 0.60 以來的默認 Markdown 解析庫
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # 是否在文檔中直接使用 HTML 標籤
+      unsafe = true
+  # 目錄設置
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# 網站地圖配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks 配置
+[Permalinks]
+  # posts = ":year/:month/:filename"
+  posts = ":filename"
+
+# 隱私資訊配置
+[privacy]
+  #  Google Analytics 相關隱私 (被 params.analytics.google 替代)
+  [privacy.googleAnalytics]
+    # ...
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# 用於輸出 Markdown 格式文檔的設置
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+# 用於輸出 Markdown 格式文檔的設置
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# 用於 Hugo 輸出文檔的設置
+[outputs]
+  # 
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
