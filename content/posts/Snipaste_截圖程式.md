@@ -1,7 +1,7 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-lastmod: {{ .Date }}
+title: "Snipaste_截圖程式"
+date: 2023-09-18T02:45:08+08:00
+lastmod: 2023-09-18T02:45:08+08:00
 draft: true #草稿
 
 tags: []

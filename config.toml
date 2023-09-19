@@ -1,40 +1,25 @@
+
 baseURL = "http://example.org/"
-
-# 更改使用 Hugo 構建網站時使用的預設主題
-theme = "LoveIt"
-
-# 網站標題
-title = "我的全新 Hugo 網站"
-
-# 網站語言, 僅在這裡 CN 大寫 ["en", "zh-CN", "fr", "pl", ...]
+# [en, zh-cn, fr, ...] 設置預設的語言
+defaultContentLanguage = "zh-tw"
+# 網站語言, 僅在這裡 CN 大寫
 languageCode = "zh-TW"
-# 語言名稱 ["English", "簡體中文", "Français", "Polski", ...]
-languageName = "繁體中文"
 # 是否包括中日韓文字
 hasCJKLanguage = true
+# 網站標題
+title = "Brad's Blog"
 
-# 預設每頁清單顯示的文章數目
-paginate = 12
-# 穀歌分析代號 [UA-XXXXXXXX-X]
-googleAnalytics = ""
-# 版權描述，僅僅用於 SEO
-copyright = ""
+# 更改使用 Hugo 構建網站時使用的預設主題
+theme = "DoIt"
 
-# 是否使用 robots.txt
-enableRobotsTXT = true
-# 是否使用 git 資訊
-enableGitInfo = true
-# 是否使用 emoji 代碼
-enableEmoji = true
-
-# 忽略一些構建錯誤
-ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # 作者配置
 [author]
-  name = "xxxx"
-  email = ""
+  name = "Brad"
+  email = "Bean32618+blog@gmail.com"
   link = ""
+  avatar = ""
+  gravatarEmail = ""
 
 # 功能表配置
 [menu]
@@ -42,7 +27,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     weight = 1
     identifier = "posts"
     # 你可以在名稱 (允許 HTML 格式) 之前添加其他資訊, 例如圖示
-    pre = ""
+    pre = "<i class='fas fa-file-alt'></i>"
     # 你可以在名稱 (允許 HTML 格式) 之後添加其他資訊, 例如圖示
     post = ""
     name = "文章"
@@ -52,7 +37,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [[menu.main]]
     weight = 2
     identifier = "tags"
-    pre = ""
+    pre = "<i class='fas fa-tag'></i>"
     post = ""
     name = "標籤"
     url = "/tags/"
@@ -60,67 +45,168 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [[menu.main]]
     weight = 3
     identifier = "categories"
-    pre = ""
+    pre = "<i class='fas fa-folder'></i>"
     post = ""
     name = "分類"
     url = "/categories/"
     title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "series"
+    pre = "<i class='fas fa-list'></i>"
+    post = ""
+    name = "系列"
+    url = "/series/"
+    title = ""
+  [[menu.main]]
+    weight = 5
+    identifier = "showcase"
+    pre = "<i class='fas fa-trophy'></i>"
+    post = ""
+    name = "作品"
+    url = "/showcase/"
+    title = ""
+  [[menu.main]]
+    weight = 97
+    identifier = "about"
+    pre = "<i class='fas fa-link'></i>"
+    post = ""
+    name = "友情連結"
+    url = "/about/"
+    title = ""
+  [[menu.main]]
+    weight = 98
+    identifier = "about"
+    pre = "<i class='fas fa-user'></i>"
+    post = ""
+    name = "關於我"
+    url = "/about/"
+    title = ""
+  [[menu.main]]
+    weight = 99
+    identifier = "github"
+    pre = "<i class='fab fa-github fa-fw'></i>"
+    post = ""
+    name = ""
+    url = "https://github.com/Bean90638"
+    title = "GitHub"
 
 [params]
-  # 網站預設主題樣式 ["auto", "light", "dark"]
-  defaultTheme = "auto"
-  # 公共 git 倉庫路徑，僅在 enableGitInfo 設為 true 時有效
+  # DoIt 主題版本
+  version = "0.4.0"
+  # 網站名稱
+  title = "Brad's Blog"
+  # 網站描述
+  description = "學習路上的筆記與踩雷紀錄"
+  # 網站關鍵字
+  keywords = ["Theme", "Hugo"]
+  # 網站預設主題樣式 ("light", "dark", "black", "auto")
+  defaultTheme = "dark"
+  # 公共 git 倉庫路徑, 僅在 enableGitInfo 設為 true 時有效
   gitRepo = ""
-  #  哪種雜湊函數用來 SRI, 為空時表示不使用 SRI
-  # ["sha256", "sha384", "sha512", "md5"]
+  # 哪種雜湊函數用來 SRI, 為空時表示不使用 SRI
+  # ("sha256", "sha384", "sha512", "md5")
   fingerprint = ""
-  #  日期格式
+  # 日期格式
   dateFormat = "2006-01-02"
-  # 網站標題, 用於 Open Graph 和 Twitter Cards
-  title = "我的網站"
-  # 網站描述, 用於 RSS, SEO, Open Graph 和 Twitter Cards
-  description = "這是我的全新 Hugo 網站"
   # 網站圖片, 用於 Open Graph 和 Twitter Cards
   images = ["/logo.png"]
+  # 開啟 PWA 支持
+  enablePWA = false
+  # [試驗性功能] 緩存圖床圖片，詳情請見：https://github.com/HEIGE-PCloud/DoIt/pull/860#issue-1574342372
+  cacheRemoteImages = false
+  # 版權資訊
+  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  # 應用圖示配置
+  [params.app]
+    # 當添加到 iOS 主螢幕或者 Android 啟動器時的標題, 覆蓋默認標題
+    title = "Brad's Blog"
+    # 是否隱藏網站圖示資源連結
+    noFavicon = false
+    # 更現代的 SVG 網站圖示, 可替代舊的 .png 和 .ico 文件
+    svgFavicon = ""
+    # Safari 圖示顏色
+    iconColor = "#5bbad5"
+    # Windows v8-10磁貼顏色
+    tileColor = "#da532c"
+
+  # 搜索配置
+  [params.search]
+    enable = true
+    # 搜尋引擎的類型 ("algolia", "fuse")
+    type = "fuse"
+    # 文章內容最長索引長度
+    contentLength = 4000
+    # 搜索框的占位提示語
+    placeholder = ""
+    # 最大結果數目
+    maxResultLength = 10
+    # 結果內容片段長度
+    snippetLength = 50
+    # 搜索結果中高亮部分的 HTML 標籤
+    highlightTag = "em"
+    # 是否在搜索索引中使用基於 baseURL 的絕對路徑
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+    [params.search.fuse]
+      # https://fusejs.io/api/options.html
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      findAllMatches = false
+      location = 0
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+      useExtendedSearch = false
+      ignoreFieldNorm = false
 
   # 頁面頭部巡覽列配置
   [params.header]
-    # 桌面端巡覽列模式 ["fixed", "normal", "auto"]
+    # 桌面端巡覽列模式 ("fixed", "normal", "auto")
     desktopMode = "fixed"
-    # 移動端巡覽列模式 ["fixed", "normal", "auto"]
+    # 移動端巡覽列模式 ("fixed", "normal", "auto")
     mobileMode = "auto"
-    #  頁面頭部巡覽列標題配置
+    # 主題切換模式
+    # 主題切換模式 ("switch", "select")
+    themeChangeMode = "select"
+    # 頁面頭部巡覽列標題配置
     [params.header.title]
       # LOGO 的 URL
       logo = ""
       # 標題名稱
-      name = ""
+      name = "Coding..."
       # 你可以在名稱 (允許 HTML 格式) 之前添加其他資訊, 例如圖示
       pre = ""
       # 你可以在名稱 (允許 HTML 格式) 之後添加其他資訊, 例如圖示
       post = ""
-      #  是否為標題顯示打字機動畫
-      typeit = false
+      # 是否為標題顯示打字機動畫
+      typeit = true
 
   # 頁面底部資訊配置
   [params.footer]
     enable = true
-    #  自訂內容 (支援 HTML 格式)
+    # 自訂內容 (支援 HTML 格式)
     custom = ''
-    #  是否顯示 Hugo 和主題資訊
+    # 是否顯示 Hugo 和主題資訊
     hugo = true
-    #  是否顯示版權資訊
+    # 託管服務資訊 (支援 HTML 格式)
+    # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
+    hostedOn = ''
+    # 是否顯示版權資訊
     copyright = true
-    #  是否顯示作者
+    # 是否顯示作者
     author = true
     # 網站創立年份
-    since = 2019
+    since = 2023
     # ICP 備案資訊，僅在中國使用 (支援 HTML 格式)
     icp = ""
     # 授權合約資訊 (支援 HTML 格式)
     license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
-  #  Section (所有文章) 頁面配置
+  # Section (所有文章) 頁面配置
   [params.section]
     # section 頁面每頁顯示文章數量
     paginate = 20
@@ -128,8 +214,14 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     dateFormat = "01-02"
     # RSS 文章數目
     rss = 10
+    # 最近更新文章設置
+    [params.section.recentlyUpdated]
+      enable = true
+      rss = false
+      days = 30
+      maxCount = 10
 
-  #  List (目錄或標籤) 頁面配置
+  # List (目錄或標籤) 頁面配置
   [params.list]
     # list 頁面每頁顯示文章數量
     paginate = 20
@@ -138,46 +230,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # RSS 文章數目
     rss = 10
 
-  #  應用圖示配置
-  [params.app]
-    # 當添加到 iOS 主螢幕或者 Android 啟動器時的標題, 覆蓋默認標題
-    title = "我的網站"
-    # 是否隱藏網站圖示資源連結
-    noFavicon = false
-    # 更現代的 SVG 網站圖示, 可替代舊的 .png 和 .ico 文件
-    svgFavicon = ""
-    # Android 流覽器主題色
-    themeColor = "#ffffff"
-    # Safari 圖示顏色
-    iconColor = "#5bbad5"
-    # Windows v8-10磁貼顏色
-    tileColor = "#da532c"
-
-  #  搜索配置
-  [params.search]
-    enable = true
-    # 搜尋引擎的類型 ["lunr", "algolia"]
-    type = "lunr"
-    # 文章內容最長索引長度
-    contentLength = 4000
-    # 搜索框的占位提示語
-    placeholder = ""
-    #  最大結果數目
-    maxResultLength = 10
-    #  結果內容片段長度
-    snippetLength = 50
-    #  搜索結果中高亮部分的 HTML 標籤
-    highlightTag = "em"
-    #  是否在搜索索引中使用基於 baseURL 的絕對路徑
-    absoluteURL = false
-    [params.search.algolia]
-      index = ""
-      appID = ""
-      searchKey = ""
-
   # 主頁配置
   [params.home]
-    #  RSS 文章數目
+    # RSS 文章數目
     rss = 10
     # 主頁個人資訊
     [params.home.profile]
@@ -185,34 +240,38 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Gravatar 郵箱，用於優先在主頁顯示的頭像
       gravatarEmail = ""
       # 主頁顯示頭像的 URL
-      avatarURL = "/images/avatar.png"
-      #  主頁顯示的網站標題 (支援 HTML 格式)
-      title = ""
-      # 主頁顯示的網站副標題 (允許 HTML 格式)
-      subtitle = "這是我的全新 Hugo 網站"
+      # 將你的頭像檔放置於 static 或者 assets 目錄下
+      # 檔路徑是相對於 static 或者 assets 目錄的
+      avatarURL = "/images/avatar.webp"
+      # 頭像的連結指向的 URL
+      avatarLinkURL = ""
+      # 主頁顯示的網站標題 (支援 HTML 格式)
+      title = "Brad's Blog"
+      # 主頁顯示的網站副標題
+      subtitle = "學習路上的筆記與踩雷紀錄"
       # 是否為副標題顯示打字機動畫
       typeit = true
       # 是否顯示社交帳號
       social = true
-      #  免責聲明 (支持 HTML 格式)
+      # 免責聲明 (支持 HTML 格式)
       disclaimer = ""
     # 主頁文章列表
     [params.home.posts]
       enable = true
       # 主頁每頁顯示文章數量
       paginate = 6
-      #  被 params.page 中的 hiddenFromHomePage 替代
+      # 被 params.page 中的 hiddenFromHomePage 替代
       # 當你沒有在文章前置參數中設置 "hiddenFromHomePage" 時的默認行為
       defaultHiddenFromHomePage = false
 
   # 作者的社交資訊設置
   [params.social]
-    GitHub = "xxxx"
-    Linkedin = ""
-    Twitter = "xxxx"
-    Instagram = "xxxx"
-    Facebook = "xxxx"
-    Telegram = "xxxx"
+    GitHub = "Bean90638"
+    Linkedin = "Bean90638"
+    Twitter = ""
+    Instagram = ""
+    Facebook = ""
+    Telegram = ""
     Medium = ""
     Gitlab = ""
     Youtubelegacy = ""
@@ -280,64 +339,104 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     HackTheBox = ""
     RootMe= ""
     Phone = ""
-    Email = "xxxx@xxxx.com"
-    RSS = true # 
+    Email = "Bean32618+blog@gmail.com"
+    RSS = true
 
-  #  文章頁面全域配置
+  # 文章頁面配置
   [params.page]
-    #  是否在主頁隱藏一篇文章
+    # 是否在主頁隱藏一篇文章
     hiddenFromHomePage = false
-    #  是否在搜索結果中隱藏一篇文章
+    # 是否在搜索結果中隱藏一篇文章
     hiddenFromSearch = false
-    #  是否使用 twemoji
+    # 是否使用 twemoji
     twemoji = false
     # 是否使用 lightgallery
-    lightgallery = false
-    #  是否使用 ruby 擴展語法
+    lightgallery = true
+    # 是否使用 ruby 擴展語法
     ruby = true
-    #  是否使用 fraction 擴展語法
+    # 是否使用 fraction 擴展語法
     fraction = true
-    #  是否使用 fontawesome 擴展語法
+    # 是否使用 fontawesome 擴展語法
     fontawesome = true
     # 是否在文章頁面顯示原始 Markdown 文檔連結
     linkToMarkdown = true
-    #  是否在 RSS 中顯示全文內容
+    # 配置文章原始檔的連結
+    linkToSource = false
+    # "https://github.com/user/repo/blob/main/{path}"
+    # 配置編輯文章的連結
+    linkToEdit = false
+    # "https://github.com/user/repo/edit/main/{path}"
+    # "https://gitlab.com/user/repo/-/edit/main/{path}"
+    # "https://bitbucket.org/user/repo/src/main/{path}?mode=edit"
+    # 配置提交錯誤的連結
+    linkToReport = false
+    # "https://github.com/user/repo/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/user/repo/blob/main/{path}|"
+    # 是否在 RSS 中顯示全文內容
     rssFullText = false
-    #  目錄配置
+    # 是否在文章開頭顯示系列導航
+    seriesNavigation = true
+    # 是否啟用最後修改時間
+    enableLastMod = true
+    # 是否啟用字數統計
+    enableWordCount = true
+    # 是否啟用閱讀時間估計
+    enableReadingTime = true
+    # 過時文章提示
+    [params.page.outdatedArticleReminder]
+      enable = true
+      # 如果文章最後更新於 90 天之前，顯示提醒
+      reminder = 90
+      # 如果文章最後更新於 180 天之前，顯示警告
+      warning = 180
+    # 目錄配置
     [params.page.toc]
       # 是否使用目錄
       enable = true
-      #  是否保持使用文章前面的靜態目錄
-      keepStatic = true
+      # 是否保持使用文章前面的靜態目錄
+      keepStatic = false
       # 是否使側邊目錄自動折疊展開
-      auto = true
-    #  代碼配置
+      auto = false
+    # 代碼配置
     [params.page.code]
       # 是否顯示代碼塊的複製按鈕
       copy = true
       # 預設展開顯示的代碼行數
-      maxShownLines = 50
-    #  KaTeX 數學公式
+      maxShownLines = 20
+    # 表格配置
+    [params.page.table]
+      # 是否開啟表格排序
+      sort = true
+    [params.page.header.number]
+      # 是否開啟標題排序
+      enable = true
+      [params.page.header.number.format]
+        # 標題排序各層文字格式
+        h2 = "{h2} {title}"
+        h3 = "{h2}.{h3} {title}"
+        h4 = "{h2}.{h3}.{h4} {title}"
+        h5 = "{h2}.{h3}.{h4}.{h5} {title}"
+        h6 = "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
+    # KaTeX 數學公式
     [params.page.math]
       enable = true
-      #  默認行內定界符是 $ ... $ 和 \( ... \)
-      inlineLeftDelimiter = ""
-      inlineRightDelimiter = ""
-      #  默認塊定界符是 $$ ... $$, \[ ... \],  \begin{equation} ... \end{equation} 和一些其它的函數
+      # 默認塊定界符是 $$ ... $$ 和 \\[ ... \\]
       blockLeftDelimiter = ""
       blockRightDelimiter = ""
+      # 默認行內定界符是 $ ... $ 和 \\( ... \\)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
       # KaTeX 外掛程式 copy_tex
       copyTex = true
       # KaTeX 外掛程式 mhchem
       mhchem = true
-    #  Mapbox GL JS 配置
+    # Mapbox GL JS 配置
     [params.page.mapbox]
       # Mapbox GL JS 的 access token
       accessToken = ""
       # 淺色主題的地圖樣式
-      lightStyle = "mapbox://styles/mapbox/light-v10?optimize=true"
+      lightStyle = "mapbox://styles/mapbox/light-v9"
       # 深色主題的地圖樣式
-      darkStyle = "mapbox://styles/mapbox/dark-v10?optimize=true"
+      darkStyle = "mapbox://styles/mapbox/dark-v9"
       # 是否添加 NavigationControl
       navigation = true
       # 是否添加 GeolocateControl
@@ -346,7 +445,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       scale = true
       # 是否添加 FullscreenControl
       fullscreen = true
-    #  文章頁面的分享資訊設置
+    # 文章頁面的分享資訊設置
     [params.page.share]
       enable = true
       Twitter = true
@@ -355,7 +454,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       Whatsapp = false
       Pinterest = false
       Tumblr = false
-      HackerNews = true
+      HackerNews = false
       Reddit = false
       VK = false
       Buffer = false
@@ -363,23 +462,28 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       Line = true
       Instapaper = false
       Pocket = false
+      Digg = false
+      Stumbleupon = false
       Flipboard = false
-      Weibo = true
-      Blogger = false
+      Weibo = false
+      Renren = false
+      Myspace = false
+      Blogger = true
       Baidu = false
       Odnoklassniki = false
-      Evernote = false
+      Evernote = true
       Skype = false
       Trello = false
       Mix = false
-    #  評論系統設置
+      Mastodon = false
+    # 評論系統設置
     [params.page.comment]
-      enable = false
+      enable = true
       # Disqus 評論系統設置
       [params.page.comment.disqus]
         # 
         enable = false
-        # Disqus 的 shortname，用來在文章中啟用 Disqus 評論系統
+        # Disqus 的 shortname, 用來在文章中啟用 Disqus 評論系統
         shortname = ""
       # Gitalk 評論系統設置
       [params.page.comment.gitalk]
@@ -398,28 +502,42 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         avatar = "mp"
         meta= ""
         pageSize = 10
-        # 為空時自動適配當前主題 i18n 配置
         lang = ""
         visitor = true
         recordIP = true
         highlight = true
         enableQQ = false
         serverURLs = ""
-        #  emoji 資料檔案名稱, 默認是 "google.yml"
-        # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
-        # 位於 "themes/LoveIt/assets/lib/valine/emoji/" 目錄
+        # emoji 資料檔案名稱, 默認是 "google.yml"
+        # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
+        # 位於 "themes/DoIt/assets/data/emoji/" 目錄
         # 可以在你的專案下相同路徑存放你自己的資料檔案:
-        # "assets/lib/valine/emoji/"
+        # "assets/data/emoji/"
         emoji = ""
+      # Waline 評論系統設置
+      [params.page.comment.waline]
+        # 
+        enable = false
+        serverURL = ""
+        pageview = true
+        comment = true
+        # emoji = ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+        # meta = ['nick', 'mail', 'link']
+        # requiredMeta = []
+        # login = 'enable'
+        # wordLimit = 0
+        # pageSize = 10
+        # imageUploader = false
+        # highlighter = false
+        # texRenderer = false
       # Facebook 評論系統設置
       [params.page.comment.facebook]
         enable = false
         width = "100%"
         numPosts = 10
         appId = ""
-        # 為空時自動適配當前主題 i18n 配置
-        languageCode = "zh_CN"
-      #  Telegram Comments 評論系統設置
+        languageCode = "zh_TW"
+      # Telegram Comments 評論系統設置
       [params.page.comment.telegram]
         enable = false
         siteID = ""
@@ -429,10 +547,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         colorful = true
         dislikes = false
         outlined = false
-      #  Commento 評論系統設置
+        dark = false
+      # Commento 評論系統設置
       [params.page.comment.commento]
         enable = false
-      #  utterances 評論系統設置
+      # Utterances 評論系統設置
       [params.page.comment.utterances]
         enable = false
         # owner/repo
@@ -441,36 +560,80 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
-      # giscus comment 評論系統設置 (https://giscus.app/zh-CN)
-      [params.page.comment.giscus]
-        # 你可以參考官方文檔來使用下列配置
+      # Twikoo 評論系統設置
+      [params.page.comment.twikoo]
         enable = false
+        envId = ""
+        region = ""
+        path = ""
+        cloudbase = true # boolean : true / false. # 是否部署在騰訊雲 CloudBase
+        visitor = true
+        commentCount = true
+      # Vssue 評論系統設置
+      [params.page.comment.vssue]
+        enable = false
+        platform = "" # ("bitbucket", "gitea", "gitee", "github", "gitlab")
+        owner = ""
         repo = ""
-        repoId = ""
-        category = "Announcements"
-        categoryId = ""
-        # 為空時自動適配當前主題 i18n 配置
-        lang = ""
-        mapping = "pathname"
-        reactionsEnabled = "1"
-        emitMetadata = "0"
-        inputPosition = "bottom"
-        lazyLoading = false
+        clientId = ""
+        clientSecret = ""
+      # Remark42 評論系統設置
+      [params.page.comment.remark42]
+        enable = false
+        host = ""
+        site_id = ""
+        max_shown_comments = 15
+        show_email_subscription = true
+        simple_view = false
+      # giscus 評論系統設置
+      [params.page.comment.giscus]
+        enable = false
+        # owner/repo
+        dataRepo = ""
+        dataRepoId = ""
+        dataCategory = ""
+        dataCategoryId = ""
+        dataMapping = "pathname"
+        dataReactionsEnabled = "1"
+        dataEmitMetadata = "0"
+        dataInputPosition = "bottom"
         lightTheme = "light"
         darkTheme = "dark"
-    #  協力廠商庫配置
+        dataLang = "zh-TW"
+      # artalk 評論系統設置
+      [page.comment.artalk]
+        enable = false
+        server = ""
+        site = ""
+        lite = false
+        katex = false
+        lightbox = false
+        pageview = true
+        commentCount = true
+    # 第三方類別庫配置
     [params.page.library]
       [params.page.library.css]
         # someCSS = "some.css"
+        # 更多第三方類別庫配置
+        # [params.page.library.css.someOtherCSS]
+        #   src = "someOther.css"
+        #   defer = true
+        #   attr = "customAttribute"
         # 位於 "assets/"
         # 或者
         # someCSS = "https://cdn.example.com/some.css"
       [params.page.library.js]
-        # someJavascript = "some.js"
+        # someJavaScript = "some.js"
+        # 更多第三方類別庫配置
+        # [params.page.library.js.someOtherJavaScript]
+        #   src = "someOther.js"
+        #   defer = false
+        #   async = true
+        #   attr = "customAttribute"
         # 位於 "assets/"
         # 或者
-        # someJavascript = "https://cdn.example.com/some.js"
-    #  頁面 SEO 配置
+        # someJavaScript = "https://cdn.example.com/some.js"
+    # 頁面 SEO 配置
     [params.page.seo]
       # 圖片 URL
       images = []
@@ -478,8 +641,19 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       [params.page.seo.publisher]
         name = ""
         logoUrl = ""
+    # 相關文章推薦配置
+    [params.page.related]
+      enable = true
+      count = 5
 
-  #  TypeIt 配置
+  # 讚賞配置
+  [params.sponsor]
+    enable = true
+    bio = "若文章對你有幫助，歡迎讚賞~"
+    link = "https://www.buymeacoffee.com/bean90638" # 你的讚賞頁面的位址
+    custom = "" # 自訂 HTML
+
+  # TypeIt 配置
   [params.typeit]
     # 每一步的打字速度 (單位是毫秒)
     speed = 100
@@ -490,22 +664,24 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # 打字結束之後游標的持續時間 (單位是毫秒, "-1" 代表無限大)
     duration = -1
 
-  # 網站驗證代碼，用於 Google/Bing/Yandex/Pinterest/Baidu
+  # 網站驗證代碼, 用於 Google/Bing/Yandex/Pinterest/Baidu
   [params.verification]
     google = ""
     bing = ""
     yandex = ""
     pinterest = ""
     baidu = ""
+    so = "" # 360 search
+    sogou = ""
 
-  #  網站 SEO 配置
+  # 網站 SEO 配置
   [params.seo]
     # 圖片 URL
     image = ""
     # 縮略圖 URL
     thumbnailUrl = ""
 
-  #  網站分析配置
+  # 網站分析配置
   [params.analytics]
     enable = false
     # Google Analytics
@@ -518,14 +694,24 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       id = ""
       # 自行託管追蹤器時的主機路徑
       server = ""
+    # Baidu Analytics
+    [params.analytics.baidu]
+      id = ""
+    # Umami Analytics
+    [params.analytics.umami]
+      data_website_id = ""
+      src = ""
+      data_host_url = ""
+      data_domains = ""
     # Plausible Analytics
     [params.analytics.plausible]
-      dataDomain = ""
-    # Yandex Metrica
-    [params.analytics.yandexMetrica]
-      id = ""
+      data_domain = ""
+      src = ""
+    # Cloudflare Analytics
+    [params.analytics.cloudflare]
+      token = ""
 
-  #  Cookie 許可配置
+  # Cookie 許可配置
   [params.cookieconsent]
     enable = true
     # 用於 Cookie 許可橫幅的文本字串
@@ -534,16 +720,16 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       dismiss = ""
       link = ""
 
-  #  協力廠商庫檔的 CDN 設置
+  # 協力廠商庫檔的 CDN 設置
   [params.cdn]
     # CDN 資料檔案名稱, 默認不啟用
-    # ["jsdelivr.yml"]
-    # 位於 "themes/LoveIt/assets/data/cdn/" 目錄
+    # ("jsdelivr.yml")
+    # 位於 "themes/DoIt/assets/data/cdn/" 目錄
     # 可以在你的專案下相同路徑存放你自己的資料檔案:
     # "assets/data/cdn/"
     data = ""
 
-  #  相容性設置
+  # 相容性設置
   [params.compatibility]
     # 是否使用 Polyfill.io 來相容舊式流覽器
     polyfill = false
@@ -574,6 +760,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [markup.goldmark.renderer]
       # 是否在文檔中直接使用 HTML 標籤
       unsafe = true
+hardWraps = true
   # 目錄設置
   [markup.tableOfContents]
     startLevel = 2
@@ -592,7 +779,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # 隱私資訊配置
 [privacy]
-  #  Google Analytics 相關隱私 (被 params.analytics.google 替代)
+  # Google Analytics 相關隱私 (被 params.analytics.google 替代)
   [privacy.googleAnalytics]
     # ...
   [privacy.twitter]
@@ -619,3 +806,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
+
+# 用於分類的設置
+[taxonomies]
+author = "authors"
+category = "categories"
+tag = "tags"
+series = "series"
