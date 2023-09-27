@@ -1,5 +1,5 @@
 
-baseURL = "http://example.org/"
+baseURL = "https://Bean90638.github.io"
 # [en, zh-cn, fr, ...] 設置預設的語言
 defaultContentLanguage = "zh-tw"
 # 網站語言, 僅在這裡 CN 大寫
