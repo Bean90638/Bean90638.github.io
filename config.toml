@@ -64,15 +64,15 @@ theme = "DoIt"
     pre = "<i class='fas fa-trophy'></i>"
     post = ""
     name = "作品"
-    url = "/showcase/"
+    url = "/page/showcase/"
     title = ""
   [[menu.main]]
     weight = 97
-    identifier = "about"
+    identifier = "friends"
     pre = "<i class='fas fa-link'></i>"
     post = ""
     name = "友情連結"
-    url = "/about/"
+    url = "/page/friends/"
     title = ""
   [[menu.main]]
     weight = 98
@@ -80,7 +80,7 @@ theme = "DoIt"
     pre = "<i class='fas fa-user'></i>"
     post = ""
     name = "關於我"
-    url = "/about/"
+    url = "/page/about/"
     title = ""
   [[menu.main]]
     weight = 99
@@ -349,7 +349,7 @@ theme = "DoIt"
     # 是否在搜索結果中隱藏一篇文章
     hiddenFromSearch = false
     # 是否使用 twemoji
-    twemoji = false
+    twemoji = true
     # 是否使用 lightgallery
     lightgallery = true
     # 是否使用 ruby 擴展語法
@@ -735,7 +735,7 @@ theme = "DoIt"
     polyfill = false
     # 是否使用 object-fit-images 來相容舊式流覽器
     objectFit = false
-
+  
 # Hugo 解析文檔的配置
 [markup]
   # 語法高亮設置
@@ -813,3 +813,10 @@ author = "authors"
 category = "categories"
 tag = "tags"
 series = "series"
+
+# 日期讀取順序 ("publishDate", "date", "lastmod", "expiryDate", ":git")
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]

@@ -1,7 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-lastmod: {{ .Date }}
 draft: true #草稿
 
 tags: []
@@ -16,3 +15,4 @@ featuredImagePreview: ""
 # hiddenFromSearch: true # 搜尋隱藏該文章
 ---
 
+<!--more-->

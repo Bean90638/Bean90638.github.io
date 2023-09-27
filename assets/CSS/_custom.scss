@@ -1,0 +1,79 @@
+.page 
+{
+    width: 50%;
+    max-width: 1000px;
+}
+// .card-item
+// {
+//     width: 100% !important;
+// }
+// 滾動條
+// ::-webkit-scrollbar {
+//     width: 1rem;
+//     height: .5rem;
+// }
+
+
+/**/
+// 覆蓋主題樣式 Start
+.single {
+    .content {
+        // 文字區塊
+        p {
+            // line-height: 1.5;
+            margin: 1rem 0;
+        }
+
+        // 引用區塊
+        blockquote {
+            p {
+                margin: 0.5rem 0 !important;
+            }
+        }
+        
+        // 友情連結區塊
+        .friend-link-info p {
+            margin: 0 !important;
+        }
+    }
+
+    // Tag前連結文字
+    .content {
+        >h2,
+        >h3,
+        >h4,
+        >h5,
+        >h6 {
+            .header-mark::before {
+                content: "#";
+            }
+        }
+    }
+
+    // .post-footer {
+    //     .post-info {
+    //         .post-info-line {
+    //             .post-info-share {
+    //                 display: inline-flex;
+    //                 justify-content: center;
+    //             }
+    //         }
+    //     }
+
+    //     .post-tags {
+    //         max-width: 75%;
+    //         white-space: nowrap;
+    //         overflow: hidden;
+    //         text-overflow: ellipsis;
+    //     }
+    // }
+
+    // .post-meta {
+    //     .author {
+    //         a {
+    //             margin-left: 0.25rem;
+    //         }
+    //     }
+    // }
+}
+/**/

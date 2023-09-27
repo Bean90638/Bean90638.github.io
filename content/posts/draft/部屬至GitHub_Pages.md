@@ -1,13 +1,12 @@
 ---
 title: "部屬至GitHub_Pages"
-date: 2023-09-16T20:58:58+08:00
-lastmod: 2023-09-16T20:58:58+08:00
+date: 2023-09-25T20:58:58+08:00
 draft: true #草稿
 
 tags: [Blog, Hugo]
 categories: []
 series: [動手建部落格]
-series_weight: 5
+series_weight: 6
 
 featuredImage: ""
 featuredImagePreview: ""
@@ -15,6 +14,7 @@ featuredImagePreview: ""
 # hiddenFromHomePage: true # 主頁隱藏該文章
 # hiddenFromSearch: true # 搜尋隱藏該文章
 ---
+<!--more-->
 
 ## 上傳GitHub
 
