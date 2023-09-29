@@ -1,0 +1,184 @@
+# 建立部落格專案
+
+<!--more-->
+<!-- ## 前言 -->
+
+## 安裝/準備
+
+### 必須安裝
+
+1. [Hugo](https://gohugo.io/installation/)
+    把MD檔案轉換為html及處裡各種網站設定
+
+    有分兩個版本
+    * hugo 一般版
+    * hugo extended 擴充版，推薦裝此版
+
+    指令安裝:
+    ```bash
+    # Windows
+    choco install hugo-extended
+    # MacOS
+    brew install hugo-extended
+    ```
+
+2. [Git](https://git-scm.com/downloads)
+版本控制程式，可以儲存每次的檔案紀錄
+也可以配合GitHub弄成自動部屬到網站
+
+### 推薦安裝
+
+* [Snipaste](https://zh.snipaste.com/download.html) 截圖程式
+*詳細操作請看[這篇](../snipaste_截圖程式)*
+  1. 可以回顧截過的圖，並且再修改
+  2. 定選截圖於畫面最上層，並且可調整大小&透明度
+  3. 快速框選/馬賽克特定區域
+
+* [VSCode](https://code.visualstudio.com/download)
+    超進階版記事本，可以裝套件方便撰寫Markdown語法、上傳Git
+
+{{< admonition type=abstract title="VSCode套件" open=false >}}
+
+1. [VSCode 繁體中文](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hant)
+2. [Markdown Extension Pack]() 常用的Markdown相關套件大補包
+
+    Markdown能協助將文件轉換成對應格式的HTML，是現代說明文件常用標記寫法
+    裡面有:
+
+    * [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) Markdown語法錯誤提示
+    * [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 自動排版、編輯時快速完成、快捷鍵
+    * [Markdown Paste](https://marketplace.visualstudio.com/items?itemName=telesoho.vscode-markdown-paste-image) `Ctrl + Alt + V`時貼上並建立圖片於目錄
+    * [Excel to Markdown table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) `Shift + Alt + V`將Excel轉換為Markdown表格語法貼上
+    * *其他套件請看官網說明*
+
+3. [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=doggy8088.git-extension-pack) 常用的Git相關套件大補包
+
+4. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 英文糾正
+這對於英文苦手的我是莫大的救星
+在編輯文件時，若輸入不常見的英文時會於下方提示波浪符號
+![Markdown_Paste](/20230917001004_Markdown_Paste.png)
+
+{{< /admonition >}}
+
+---
+
+## 建立專案
+
+*假設目錄名稱為: my_blog*
+
+### 建立Hugo專案
+
+```bash
+hugo new site my_blog
+```
+
+#### 專案結構
+建立完成後會有以下目錄結構 *(沒備註的檔案為演示會放啥檔案)*
+
+```bash
+my_blog/
+├── .git/
+├── archetypes/ # 文章樣板
+│   └── default.md  
+├── assets/     # 
+│   └── CSS/
+│       ├── _custom.scss
+│       ├── _override.scss
+│       └── _variables.scss
+├── content/    # 文章
+│   ├── posts/
+│   │   ├── my_post1.md
+│   │   └── my_post2.md
+│   └── page/
+│       ├── about.md
+│       └── friends.md
+├── data/       # 資料庫，EX:JSON
+├── layouts/    # HTML文件
+├── public/     # 可刪除
+├── resources/  # 可刪除
+├── static/     # 靜態資源，EX:圖片、JS、CSS
+│   ├── images/
+│   ├── JS/
+│   └── CSS/
+├── themes/     # 主題目錄
+│   ├── DoIt/
+│   └── LoveIt/
+└── config.toml # 網站設定檔
+```
+
+### 建立Git版控庫
+
+```bash
+#進入目錄
+cd my_blog
+#建立空的版控庫
+git init
+```
+
+### 引用主題 
+
+*使用不同主題的話，後面文章相關的**URL、目錄、主題名稱**部分記得改*
+
+1. **(推薦)** Git下載為Git子模組
+
+    Git子模組有點像是引用指定版本
+    好處是主題的版本控制與Blog的板控是平行的，兩邊個別切換互不影響👍
+
+    ```bash
+    git submodule add https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
+    ```
+
+ 2. 由Git下載至指定目錄
+
+    ```bash
+    git clone https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
+    ```
+
+ 3. 下載後手動加入Git
+    至官網下載[最新主題包](https://github.com/HEIGE-PCloud/DoIt/releases)
+    解壓縮內容放在themes目錄
+
+### 設定主題的設定檔
+
+`DoIt`主題直接參考並修改[官方TOML](https://hugodoit.pages.dev/zh-cn/theme-documentation-basics/#site-configuration)，取代掉`./config.toml`檔案內容
+其他主題就要看主題官網說明了
+
+### 上傳本機Git版控
+
+```bash
+#全部加入版控
+git add .
+#上傳版控
+git commit -m "Init My Blog By Hugo"
+```
+
+---
+
+## 建立文章
+
+```bash
+hugo new posts/頁面名稱.md
+```
+
+並且將內容的`draft: true`改成`draft: false`就可以是已發布文章狀態
+
+---
+
+## 本機執行Blog網站
+
+* 執行本機站台
+
+    ```bash
+    hugo serve
+    ```
+
+    執行後可以去 [http://localhost:1313](http://localhost:1313) 查看
+    若要顯示草稿文章: `hugo serve -D`
+
+* 執行站台期間修改檔案
+    修改檔案內容儲存後會立刻刷新頁面
+    但如果是新增頁面、新標籤...等有新頁面的情況，則需要重新啟動站台才會顯示新頁面
+
+* 停止本機站台
+    快捷鍵:`Ctrl+C`
+
