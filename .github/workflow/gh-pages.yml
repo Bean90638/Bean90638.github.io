@@ -1,19 +1,14 @@
-# ref:https://www.lixueduan.com/posts/blog/01-github-action-deploy-hugo
-# ref:https://dwye.dev/post/hugo-github-action/
-# ref:https://github.com/peaceiris/actions-hugo
-
-name: Hugo Deploy To GitHub Pages
+name: GitHub Pages
 
 on:
   push:
-    branches: # Set a branch to deploy
-      - main
-      - master
+    branches:
+      - master # Set a branch to deploy
   pull_request:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -25,7 +20,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: "0.117.0"
           extended: true
 
       - name: Setup Ruby
