@@ -2,32 +2,37 @@ name: GitHub Pages
 
 on:
   push:
-    branches: # Set a branch to deploy
+    branches: # 偵測異動的分支
       - master
-  pull_request:
+  workflow_dispatch: # 手動觸發
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+    runs-on: ubuntu-latest # 虛擬機的作業系統&版本
     steps:
+      # 簽出程式碼至虛擬機
       - uses: actions/checkout@v3
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
+      # 虛擬機安裝HUGO
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
-          extended: true
+          extended: true # 擴展版
 
+      # 發佈網站
       - name: Build
-        run: hugo --gc --minify --cleanDestinationDir
+        run: hugo --gc --minify --cleanDestinationDir --enableGitInfo --forceSyncStatic
 
+      # 上傳至gh-page分支
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # publish_dir: ./public
+          user_name: "github-actions[bot]" # 上傳人員
+          user_email: "github-actions[bot]@users.noreply.github.com" # 上傳EMail
+          full_commit_message: ${{ github.event.head_commit.message }} # 上傳訊息
+          allow_empty_commit: true # 允許空上傳

@@ -259,7 +259,7 @@ theme = "DoIt"
     [params.home.posts]
       enable = true
       # 主頁每頁顯示文章數量
-      paginate = 6
+      paginate = 10
       # 被 params.page 中的 hiddenFromHomePage 替代
       # 當你沒有在文章前置參數中設置 "hiddenFromHomePage" 時的默認行為
       defaultHiddenFromHomePage = false
