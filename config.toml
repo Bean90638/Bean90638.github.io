@@ -644,7 +644,7 @@ theme = "DoIt"
     # 相關文章推薦配置
     [params.page.related]
       enable = true
-      count = 5
+      count = 2
 
   # 讚賞配置
   [params.sponsor]
