@@ -1,7 +1,6 @@
 # 建立部落格專案
 
 <!--more-->
-<!-- ## 前言 -->
 
 ## 安裝/準備
 
@@ -15,6 +14,7 @@
     * hugo extended 擴充版，推薦裝此版
 
     指令安裝:
+
     ```bash
     # Windows
     choco install hugo-extended
@@ -56,7 +56,7 @@
 4. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 英文糾正
 這對於英文苦手的我是莫大的救星
 在編輯文件時，若輸入不常見的英文時會於下方提示波浪符號
-![Markdown_Paste](/20230917001004_Markdown_Paste.png)
+![Markdown_Paste](/Image/20230917001004_Markdown_Paste.png)
 
 {{< /admonition >}}
 
@@ -122,19 +122,31 @@ git init
 1. **(推薦)** Git下載為Git子模組
 
     Git子模組有點像是引用指定版本
-    好處是主題的版本控制與Blog的板控是平行的，兩邊個別切換互不影響👍
+    好處是主題的版本控制與Blog的版本控制是平行的，兩邊個別切換互不影響👍
 
     ```bash
     git submodule add https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
     ```
 
- 2. 由Git下載至指定目錄
+    {{< admonition type=warning title="當專案重新下載" open=false >}}
+由於主程式與子模組是分開的Git
+所以下載專案後子模組目錄會是空的
+導致本機站台會無法執行
+這時執行以下指令會將**所有子模組**都初始化並下載至最新版
+
+```bash
+git submodule update --init --recursive
+```
+
+{{< /admonition >}}
+
+ 1. 由Git下載至指定目錄
 
     ```bash
     git clone https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
     ```
 
- 3. 下載後手動加入Git
+ 2. 下載後手動加入Git
     至官網下載[最新主題包](https://github.com/HEIGE-PCloud/DoIt/releases)
     解壓縮內容放在themes目錄
 
