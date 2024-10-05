@@ -1,3 +1,25 @@
+// 字型
 $global-font-family: PingFangSC-Regular,Helvetica,"Helvetica Neue","Segoe UI","Hiragino Sans GB","Source Han Sans CN","Microsoft YaHei",STHeiti,"WenQuanYi Micro Hei",sans-serif;
-$global-font-size: 15px;
-$global-font-color: #444;
+
+// 取回元LOVEIT的配色
+html.dark {
+    --fgColor-default: #b0b3a9 !important; /* 標題文字顏色 */
+    --fgColor-secondary: #b3aba9 !important; /* 閃爍游標顏色 */
+    --fgColor-muted: #363636 !important; /* 導覽列分隔線顏色 */
+    --fgColor-link: #55bde2 !important; /* 連結 */
+    --fgColor-link-hover: #bdebfc !important; /* 連結反白 */
+    --bgColor-default: #292a2d !important; /* 背景 */
+    --bgColor-secondary: #252627 !important; /* 導覽列背景 */
+    --bgColor-accent-emphasis: #1f6feb !important; /* TODO */
+    --bgColor-accent-muted: #388bfd1a !important; /* TODO */
+    --borderColor-default: #363636 !important; /* 分隔線顏色 */
+    --bgColor-neutral-muted: #272c34 !important; /* 強調字顏色 */
+    --selection-bgColor: #1f6febb3 !important; /* 選取背景色 TODO */
+    --button-default-bgColor-rest: #363636 !important; /* 按鈕靜止背景顏色 */
+    --button-default-bgColor-hover: #363636 !important; /* 按鈕滑鼠懸停背景顏色 */
+}
+
+// 置底讚賞
+.sponsor-bio {
+  white-space: nowrap; // 不換行
+}
