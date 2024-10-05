@@ -140,6 +140,8 @@ runs-on: ubuntu-22.04
 
 ### 發佈靜態檔案
 
+更詳細可以觀看[官方文件](https://gohugo.io/commands/hugo/)
+
 * `--gc` 建置後刪除快取檔案
 * `--minify` 最小化檔案，壓縮HTML、CSS、JavaScrip...等文件
 * `--cleanDestinationDir` 發佈前先清除目錄內檔案
