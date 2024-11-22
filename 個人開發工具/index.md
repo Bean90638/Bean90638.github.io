@@ -105,9 +105,11 @@ ChatGPT提供快捷按鈕、URL帶參數快速查詢，可拿來配合wow工具�
 網頁上的JSON以格式化方式呈現
 * [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
 強制網頁深色模式保護眼睛
-設定`Alt+C`加入`僅反轉列出清單`
+設定`Alt+C`為`僅反轉列出清單`
 * [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4/iikmkjmpaadaobahmlepeloendndfphd)
 網頁腳本擴充程式
+* [沉浸式翻譯](https://microsoftedge.microsoft.com/addons/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AD%AF-%E7%B6%B2%E9%A0%81%E7%BF%BB%E8%AD%AF%E6%93%B4%E5%85%85-pdf%E7%BF%BB%E8%AD%AF-/amkbmndfnliijdhojkpoglbnaaahippg)
+網頁、YT 的中英翻譯 設定`Alt+A`為`翻譯`、`Alt+S`為`輸入框翻譯`
 <!-- * [動畫瘋 Plus](https://chromewebstore.google.com/detail/%E5%8B%95%E7%95%AB%E7%98%8B-plus/ajgafpcbdchnokkfimcnmoemeldnefnl) -->
 <!-- * [動畫瘋·Plus](https://chromewebstore.google.com/detail/%E5%8B%95%E7%95%AB%E7%98%8B%C2%B7plus/jkpkmeimgkhodlppajjgikfcodlilmpd) -->
 
